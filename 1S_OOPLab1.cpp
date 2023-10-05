@@ -6,10 +6,6 @@ int main()
 	window.setVerticalSyncEnabled(true);
 
 	Game game;
-	Texture chessPic;
-	chessPic.loadFromFile("chess.png");
-	Sprite chess;
-	chess.setTexture(chessPic);
 
 	while (window.isOpen())
 	{
@@ -26,10 +22,8 @@ int main()
 			}
 		}
 
-
 		window.clear({ 255, 255, 255 });
 		game.drawAll(window);
-		window.draw(chess);
 		window.display();
 	}
 

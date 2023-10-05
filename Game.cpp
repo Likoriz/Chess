@@ -11,7 +11,6 @@ void Game::startGame()
 {
 	if (!isStarted)
 		Game();
-
 }
 
 void Game::endGame()

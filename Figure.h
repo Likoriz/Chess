@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "1S_OOPLab1.h"
 
 using namespace sf;
 using namespace std;
@@ -9,17 +10,37 @@ using namespace std;
 class Figure
 {
 private:
-	int x, y;
+	float x, y;
 	Texture figureTexture;
 	Sprite figureSprite;
-	enum figureColor { WHITE = 0, BLACK = 1 };
-	enum figureType { BISHOP = 0, KING = 1, KNIGHT = 2, PAWN = 3, QUEEN = 4, ROOK = 5};
 	int type;
 	int color;
+	bool isOnBoard = false;
 
 public:
-	virtual void checkMove();//проверка возможных ходов для каждой фигуры
-	virtual void loadFigure();//подгрузка текстур для фигур
+	//Установка информации о нахождении фигуры на доске
+	void setPresence(bool flag);
+
+	//Получение информации о нахождении фигуры на доске
+	bool getPresence();
+	
+	//Установка текстуры фигуры
+	void setTexture();
+	
+	//Установка типа фигуры
+	void setType(int _type);
+
+	//Установка позиции фигуры на доске
+	void setPosition(float _x, float _y);
+
+	//Установка цвета фигуры
+	void setColor(int _color);
+
+	//Получение текстуры фигуры
+	Sprite getTexture();
+
+	//Проверка возможных ходов для выбранной фигуры (подсветка свободных клеток)
+	virtual void checkMove();
 };
 
 

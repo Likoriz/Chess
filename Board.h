@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "Figure.h"
 
 using namespace sf;
 using namespace std;
@@ -12,11 +13,21 @@ class Board
 {
 private:
 	RectangleShape* board;
-	Figure*** figuresOnBoard;
+	Figure** figuresOnBoard = { nullptr };
 	Color color;
 public:
+	//Выделение памяти для доски и фигур
 	Board();
-	void drawBoard(RenderWindow& window);//Отрисовка доски и фигур
-	void makeMove();//Выбор фигуры на доске, выбор свободной клетки для хода, перемещение
-	void setupBoard();//Расстановка доски и фигур
+
+	//Отрисовка доски и фигур
+	void drawBoard(RenderWindow& window);
+
+	//Расстановка доски и фигур
+	void setupBoard();
+
+	//Выбор фигуры на доске, выбор свободной клетки для хода, перемещение
+	void makeMove();
+
+	//Получение информации о количестве фигур на доске
+	int amountOfFigures();
 };

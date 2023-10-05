@@ -141,6 +141,7 @@
     <ClCompile Include="Game.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="1S_OOPLab1.h" />
     <ClInclude Include="Figure.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="Game.h" />
