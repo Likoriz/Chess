@@ -16,6 +16,7 @@ private:
 	int type;
 	int color;
 	bool isOnBoard = false;
+	int amount;
 
 public:
 	//”становка информации о нахождении фигуры на доске
@@ -38,9 +39,6 @@ public:
 
 	//ѕолучение текстуры фигуры
 	Sprite getTexture();
-
-	//ѕроверка возможных ходов дл€ выбранной фигуры (подсветка свободных клеток)
-	virtual void checkMove();
 };
 
 
