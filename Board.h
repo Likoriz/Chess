@@ -13,7 +13,7 @@ class Board
 {
 private:
 	RectangleShape* board;
-	Figure** figuresOnBoard = { nullptr };
+	Figure*** figuresOnBoard = { nullptr };
 	Color color;
 public:
 	//Выделение памяти для доски и фигур

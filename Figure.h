@@ -17,7 +17,6 @@ private:
 	int color;
 	bool isOnBoard = false;
 	int amount;
-
 public:
 	//Установка информации о нахождении фигуры на доске
 	void setPresence(bool flag);
