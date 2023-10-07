@@ -83,3 +83,8 @@ Sprite Figure::getTexture()
 {
 	return figureSprite;
 }
+
+void Figure::checkMove()
+{
+
+}

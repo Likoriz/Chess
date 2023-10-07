@@ -176,11 +176,6 @@ void Board::setupBoard()
 	}
 }
 
-void Board::checkMove()
-{
-
-}
-
 void Board::makeMove()
 {
 
