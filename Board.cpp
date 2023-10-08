@@ -51,17 +51,18 @@ void Board::setupBoard()
 			{
 				if (i == 0)
 				{
-					//figuresOnBoard[i][j] = new Rook();
-					figuresOnBoard[i][j] = new Figure();
+					figuresOnBoard[i][j] = new Rook();
+					//figuresOnBoard[i][j] = new Figure();
 					figuresOnBoard[i][j]->setColor(BLACK);
 					figuresOnBoard[i][j]->setType(ROOK);
 					figuresOnBoard[i][j]->setPresence(true);
+					//figuresOnBoard[i][j];
 				}
 				else
 					if (i == 7)
 					{
-						//figuresOnBoard[i][j] = new Rook();
-						figuresOnBoard[i][j] = new Figure();
+						figuresOnBoard[i][j] = new Rook();
+						//figuresOnBoard[i][j] = new Figure();
 						figuresOnBoard[i][j]->setColor(WHITE);
 						figuresOnBoard[i][j]->setType(ROOK);
 						figuresOnBoard[i][j]->setPresence(true);
@@ -134,11 +135,12 @@ void Board::setupBoard()
 						{
 							if (i == 0)
 							{
-								//figuresOnBoard[i][j] = new King();
-								figuresOnBoard[i][j] = new Figure();
+								figuresOnBoard[i][j] = new King();
+								//figuresOnBoard[i][j] = new Figure();
 								figuresOnBoard[i][j]->setColor(BLACK);
 								figuresOnBoard[i][j]->setType(KING);
 								figuresOnBoard[i][j]->setPresence(true);
+								((King*)(figuresOnBoard[i][j]))->setLength(0);
 							}
 							else
 								if (i == 7)
@@ -174,11 +176,6 @@ void Board::setupBoard()
 			figuresOnBoard[i][j]->setTexture();
 		}
 	}
-}
-
-void Board::makeMove()
-{
-
 }
 
 int Board::amountOfFigures()

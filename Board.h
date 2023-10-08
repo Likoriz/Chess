@@ -2,12 +2,18 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "Figure.h"
+#include "Bishop.h"
+#include "King.h"
+#include "Knight.h"
+#include "Pawn.h"
+#include "Queen.h"
+#include "Rook.h"
+
 
 using namespace sf;
 using namespace std;
 
-class Figure;
+
 
 class Board
 {
@@ -24,9 +30,6 @@ public:
 
 	//Расстановка доски и фигур
 	void setupBoard();
-
-	//Выбор фигуры на доске, выбор свободной клетки для хода, перемещение
-	void makeMove();
 
 	//Получение информации о количестве фигур на доске
 	int amountOfFigures();

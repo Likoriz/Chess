@@ -40,7 +40,7 @@ public:
 	Sprite getTexture();
 
 	//Проверка возможных ходов для выбранной фигуры (подсветка свободных клеток)
-	virtual void checkMove();
+	virtual void makeMove();
 };
 
 
