@@ -4,5 +4,6 @@ class Bishop : public King
 {
 public:
 	void makeMove();
+	Bishop();
 };
 

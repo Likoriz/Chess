@@ -3,6 +3,7 @@
 class Rook : public King
 {
 public:
+	Rook();
 	void makeMove();
 };
 

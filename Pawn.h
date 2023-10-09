@@ -3,6 +3,7 @@
 class Pawn : public King
 {
 public:
+	Pawn();
 	void makeMove();
 };
 

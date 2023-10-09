@@ -3,6 +3,7 @@
 class Queen : public King
 {
 public:
+	Queen();
 	void makeMove();
 };
 

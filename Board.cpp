@@ -56,7 +56,6 @@ void Board::setupBoard()
 					figuresOnBoard[i][j]->setColor(BLACK);
 					figuresOnBoard[i][j]->setType(ROOK);
 					figuresOnBoard[i][j]->setPresence(true);
-					//figuresOnBoard[i][j];
 				}
 				else
 					if (i == 7)
@@ -73,8 +72,7 @@ void Board::setupBoard()
 				{
 					if (i == 0)
 					{
-						//figuresOnBoard[i][j] = new Knight();
-						figuresOnBoard[i][j] = new Figure();
+						figuresOnBoard[i][j] = new Knight();
 						figuresOnBoard[i][j]->setColor(BLACK);
 						figuresOnBoard[i][j]->setType(KNIGHT);
 						figuresOnBoard[i][j]->setPresence(true);
@@ -82,8 +80,7 @@ void Board::setupBoard()
 					else
 						if (i == 7)
 						{
-							//figuresOnBoard[i][j] = new Knight();
-							figuresOnBoard[i][j] = new Figure();
+							figuresOnBoard[i][j] = new Knight();
 							figuresOnBoard[i][j]->setColor(WHITE);
 							figuresOnBoard[i][j]->setType(KNIGHT);
 							figuresOnBoard[i][j]->setPresence(true);
@@ -94,8 +91,7 @@ void Board::setupBoard()
 					{
 						if (i == 0)
 						{
-							//figuresOnBoard[i][j] = new Bishop();
-							figuresOnBoard[i][j] = new Figure();
+							figuresOnBoard[i][j] = new Bishop();
 							figuresOnBoard[i][j]->setColor(BLACK);
 							figuresOnBoard[i][j]->setType(BISHOP);
 							figuresOnBoard[i][j]->setPresence(true);
@@ -103,8 +99,7 @@ void Board::setupBoard()
 						else
 							if (i == 7)
 							{
-								//figuresOnBoard[i][j] = new Bishop();
-								figuresOnBoard[i][j] = new Figure();
+								figuresOnBoard[i][j] = new Bishop();
 								figuresOnBoard[i][j]->setColor(WHITE);
 								figuresOnBoard[i][j]->setType(BISHOP);
 								figuresOnBoard[i][j]->setPresence(true);
@@ -115,8 +110,7 @@ void Board::setupBoard()
 						{
 							if (i == 0)
 							{
-								//figuresOnBoard[i][j] = new Queen();
-								figuresOnBoard[i][j] = new Figure();
+								figuresOnBoard[i][j] = new Queen();
 								figuresOnBoard[i][j]->setColor(BLACK);
 								figuresOnBoard[i][j]->setType(QUEEN);
 								figuresOnBoard[i][j]->setPresence(true);
@@ -124,8 +118,7 @@ void Board::setupBoard()
 							else
 								if (i == 7)
 								{
-									//figuresOnBoard[i][j] = new Queen();
-									figuresOnBoard[i][j] = new Figure();
+									figuresOnBoard[i][j] = new Queen();
 									figuresOnBoard[i][j]->setColor(WHITE);
 									figuresOnBoard[i][j]->setType(QUEEN);
 									figuresOnBoard[i][j]->setPresence(true);
@@ -136,17 +129,14 @@ void Board::setupBoard()
 							if (i == 0)
 							{
 								figuresOnBoard[i][j] = new King();
-								//figuresOnBoard[i][j] = new Figure();
 								figuresOnBoard[i][j]->setColor(BLACK);
 								figuresOnBoard[i][j]->setType(KING);
 								figuresOnBoard[i][j]->setPresence(true);
-								((King*)(figuresOnBoard[i][j]))->setLength(0);
 							}
 							else
 								if (i == 7)
 								{
-									//figuresOnBoard[i][j] = new King();
-									figuresOnBoard[i][j] = new Figure();
+									figuresOnBoard[i][j] = new King();
 									figuresOnBoard[i][j]->setColor(WHITE);
 									figuresOnBoard[i][j]->setType(KING);
 									figuresOnBoard[i][j]->setPresence(true);
@@ -155,8 +145,7 @@ void Board::setupBoard()
 
 			if (i == 1)
 			{
-				//figuresOnBoard[i][j] = new Pawn();
-				figuresOnBoard[i][j] = new Figure();
+				figuresOnBoard[i][j] = new Pawn();
 				figuresOnBoard[i][j]->setColor(BLACK);
 				figuresOnBoard[i][j]->setType(PAWN);
 				figuresOnBoard[i][j]->setPresence(true);
@@ -164,8 +153,7 @@ void Board::setupBoard()
 			else
 				if (i == 6)
 				{
-					//figuresOnBoard[i][j] = new Pawn();
-					figuresOnBoard[i][j] = new Figure();
+					figuresOnBoard[i][j] = new Pawn();
 					figuresOnBoard[i][j]->setColor(WHITE);
 					figuresOnBoard[i][j]->setType(PAWN);
 					figuresOnBoard[i][j]->setPresence(true);

@@ -5,5 +5,9 @@ void King::makeMove()
 }
 void King::setLength(bool value)
 {
-	has_short_legs=value;
+	hasShortLegs=value;
+}
+King::King()
+{
+	setLength(false);
 }
