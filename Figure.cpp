@@ -84,7 +84,7 @@ Sprite Figure::getTexture()
 	return figureSprite;
 }
 
-void Figure::makeMove()
+void Figure::makeMove(Figure***& FiguresOnBoard)
 {
 
 }

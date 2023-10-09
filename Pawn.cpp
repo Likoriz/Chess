@@ -3,3 +3,7 @@ void Pawn::makeMove()
 {
 
 }
+Pawn::Pawn()
+{
+
+}

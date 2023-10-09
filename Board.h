@@ -24,13 +24,10 @@ private:
 public:
 	//Выделение памяти для доски и фигур
 	Board();
-
 	//Отрисовка доски и фигур
 	void drawBoard(RenderWindow& window);
-
+	Figure* chooseFigure();
 	//Расстановка доски и фигур
 	void setupBoard();
-
 	//Получение информации о количестве фигур на доске
-	int amountOfFigures();
 };

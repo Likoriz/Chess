@@ -16,7 +16,7 @@ private:
 	int type;
 	int color;
 	bool isOnBoard = false;
-	int amount;
+	char isChosen = 0;
 public:
 	//”становка информации о нахождении фигуры на доске
 	void setPresence(bool flag);
@@ -40,7 +40,7 @@ public:
 	Sprite getTexture();
 
 	//ѕроверка возможных ходов дл€ выбранной фигуры (подсветка свободных клеток)
-	virtual void makeMove();
+	virtual void makeMove(Figure***& FiguresOnBoard);
 };
 
 
