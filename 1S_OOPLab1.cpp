@@ -19,6 +19,9 @@ int main()
 			case Event::Closed:
 				window.close();
 				break;
+			case Event::MouseButtonPressed:
+
+				break;
 			}
 		}
 
