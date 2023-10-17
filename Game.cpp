@@ -22,3 +22,13 @@ void Game::drawAll(RenderWindow& window)
 {
 	board.drawBoard(window);
 }
+
+Board Game::GetBoard()
+{
+	return board;
+}
+
+Board* Game::GetBoardP()
+{
+	return &board;
+}

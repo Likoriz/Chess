@@ -3,7 +3,3 @@ void Rook::makeMove()
 {
 
 }
-Rook::Rook()
-{
-	setLength(true);
-}

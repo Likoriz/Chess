@@ -24,4 +24,9 @@ public:
 
 	//Окончание игры
 	void endGame();
+
+	Board GetBoard();
+
+	void change_turn();
+	Board* GetBoardP();
 };

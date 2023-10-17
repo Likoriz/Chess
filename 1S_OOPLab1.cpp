@@ -19,6 +19,23 @@ int main()
 			case Event::Closed:
 				window.close();
 				break;
+			case Event::MouseButtonPressed:
+				if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+				{
+					//cout<<event.mouseButton.x<<" "<<event.mouseButton.y<<"\n"<<event.mouseButton.x/128<<" "<<event.mouseButton.y/128<<"\n";
+					game.GetBoardP()->chooseFigure(event.mouseButton.x, event.mouseButton.y, game.GetBoardP());
+				}
+				else 
+					if(sf::Mouse::isButtonPressed(sf::Mouse::Right))
+					{
+						game.GetBoardP()->resetChoice();
+					}
+			}
+
+			if(!game.GetBoard().KingsAreAlive())
+			{
+				window.close();
+				break;
 			}
 		}
 

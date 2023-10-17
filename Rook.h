@@ -1,11 +1,8 @@
 #pragma once
 #include "King.h"
-class Rook : public King
+class Rook : public Figure
 {
 public:
-	Rook();
 	void makeMove();
-private: 
-
 };
 

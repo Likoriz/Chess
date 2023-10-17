@@ -72,6 +72,7 @@ void Figure::setPosition(float _x, float _y)
 {
 	x = _x;
 	y = _y;
+	figureSprite.setPosition(Vector2f(x, y));
 }
 
 void Figure::setColor(int _color)
@@ -84,7 +85,31 @@ Sprite Figure::getTexture()
 	return figureSprite;
 }
 
-void Figure::makeMove(Figure***& FiguresOnBoard)
+float Figure::getPositionX()
+{
+	return x;
+}
+
+float Figure::getPositionY()
+{
+	return y;
+}
+
+int Figure::getColor()
+{
+	return color;
+}
+
+void Figure::checkMove(Figure***& FiguresOnBoard, Board* board)
 {
 
+}
+bool Figure::makeMove(Board* board, int MouseX, int MouseY)
+{
+	return 0;
+}
+
+int Figure::getType()
+{
+	return this->type;
 }

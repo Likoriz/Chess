@@ -1,9 +1,12 @@
 #pragma once
 #include "King.h"
-class Pawn : public King
+class Pawn : public Figure
 {
+private:
+	bool didFirstMove=0;
 public:
-	Pawn();
-	void makeMove();
+	void checkMove(Figure***& FiguresOnBoard, Board* board);
+	bool makeMove(Board* board, int MouseX, int MouseY);
+	bool hasDidFirstMove();
 };
 

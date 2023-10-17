@@ -1,9 +1,8 @@
 #pragma once
-#include "King.h"
-class Queen : public King
+#include "Figure.h"
+
+class Queen : public Figure
 {
 public:
-	Queen();
-	void makeMove();
+	void checkMove(Board& board, Figure& figure);
 };
-

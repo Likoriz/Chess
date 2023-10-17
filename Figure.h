@@ -7,6 +7,8 @@
 using namespace sf;
 using namespace std;
 
+class Board;
+
 class Figure
 {
 private:
@@ -16,7 +18,6 @@ private:
 	int type;
 	int color;
 	bool isOnBoard = false;
-	char isChosen = 0;
 public:
 	//”становка информации о нахождении фигуры на доске
 	void setPresence(bool flag);
@@ -39,8 +40,15 @@ public:
 	//ѕолучение текстуры фигуры
 	Sprite getTexture();
 
+	float getPositionX();
+	float getPositionY();
+
+	int getType();
+
+	int getColor();
 	//ѕроверка возможных ходов дл€ выбранной фигуры (подсветка свободных клеток)
-	virtual void makeMove(Figure***& FiguresOnBoard);
+	virtual void checkMove(Figure***& FiguresOnBoard, Board* board);
+	virtual bool makeMove(Board* board, int MouseX, int MouseY);
 };
 
 
