@@ -190,7 +190,10 @@ Figure* Board::getFigure(float _x, float _y)
 {
 	_x/=128.f;
 	_y/=128.f;
-	return figuresOnBoard[(int)_y][(int)_x];
+	for(int i=0;i<8;i++)
+		for(int j=0;j<8;j++)
+			if(figuresOnBoard[i][j]->getPositionX()==_x && figuresOnBoard[i][j]->getPositionY()==_Y)
+				return figuresOnBoard[i][j];
 	
 }
 
