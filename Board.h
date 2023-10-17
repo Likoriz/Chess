@@ -9,7 +9,6 @@
 #include "Queen.h"
 #include "Rook.h"
 
-
 using namespace sf;
 using namespace std;
 
