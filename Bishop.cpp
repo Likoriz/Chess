@@ -5,8 +5,8 @@ void Bishop::checkMove(Board* board, Figure* figure)
 {
 	//int mas[8][8] = { 0 };
 	bool flag = false;
-	float size_x = figure->getSizeX();
-	float size_y = figure->getSizeY();
+	float size_x = figure->getPositionX();
+	float size_y = figure->getPositionY();
 	float i = size_y / 128.f;
 	float j = size_x / 128.f;
 	float offset = 1.f;

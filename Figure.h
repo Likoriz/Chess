@@ -47,11 +47,6 @@ public:
 	
 	int getColor();
 
-	//ѕолучение размера фигуры по X
-	float getSizeX();
-
-	//ѕолучение размера фигуры по Y
-	float getSizeY();
 
 	//ѕроверка возможных ходов дл€ выбранной фигуры (подсветка свободных клеток)
 	virtual void checkMove(Figure***& FiguresOnBoard, Board* board);

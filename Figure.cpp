@@ -100,13 +100,7 @@ int Figure::getColor()
 	return color;
 }
 
-float Figure::getSizeX() {
-	return x;
-}
 
-float Figure::getSizeY() {
-	return y;
-}
 
 void Figure::checkMove(Figure***& FiguresOnBoard, Board* board)
 {
