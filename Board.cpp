@@ -190,10 +190,14 @@ Figure* Board::getFigure(float _x, float _y)
 {
 	_x/=128.f;
 	_y/=128.f;
+	int tmpx=(int)_x;
+	int tmpy=(int)_y;
 	for(int i=0;i<8;i++)
 		for(int j=0;j<8;j++)
-			if(figuresOnBoard[i][j]->getPositionX()==_x && figuresOnBoard[i][j]->getPositionY()==_Y)
+		{
+			if((int)(figuresOnBoard[i][j]->getPositionX()/128)==tmpx && (int)(figuresOnBoard[i][j]->getPositionY()/128)==tmpy)
 				return figuresOnBoard[i][j];
+		}
 	
 }
 
@@ -220,6 +224,7 @@ void Board::chooseFigure(int MouseX, int MouseY, Board* board)
 	}
 	else
 	{
+		Figure* fig=getFigure(MouseX, MouseY);
 		this->SetChosenFigure(getFigure(MouseX, MouseY));
 		if(this->GetChosenFigure()->getColor()==turn)
 		{
