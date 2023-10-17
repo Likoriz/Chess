@@ -44,7 +44,7 @@ public:
 	float getPositionY();
 
 	int getType();
-
+	
 	int getColor();
 
 	//Получение размера фигуры по X

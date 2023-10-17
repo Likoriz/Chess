@@ -11,7 +11,7 @@ void Rook::checkMove(Board* board, Figure* figure)
 	float j = size_x / 128.f;
 	float offset = 1.f;
 	int tmp = figure->getColor();
-
+	
 	while (flag) {
 		if ((i - offset) < 0)
 			flag = false;
