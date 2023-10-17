@@ -1,8 +1,9 @@
 #pragma once
-#include "King.h"
+#include "Figure.h"
 class Rook : public Figure
 {
 public:
-	void makeMove();
+	void checkMove(Board* board, Figure* figure);
+	bool makeMove(Board* board, int MouseX, int MouseY);
 };
 

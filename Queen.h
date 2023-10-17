@@ -4,5 +4,6 @@
 class Queen : public Figure
 {
 public:
-	void checkMove(Board& board, Figure& figure);
+	void checkMove(Board* board, Figure* figure);
+	bool makeMove(Board* board, int MouseX, int MouseY);
 };
