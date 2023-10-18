@@ -231,6 +231,9 @@ void Board::chooseFigure(int MouseX, int MouseY, Board* board)
 			this->GetChosenFigure()->checkMove(figuresOnBoard, board);
 			cout<<"\n"<<this->GetChosenFigure()->getPositionX()<<" "<<this->GetChosenFigure()->getPositionY()<<" "<<this->GetChosenFigure()->getPresence()<<"\n";
 		}
+		else
+			this->resetChoice();
+
 	}
 }
 
