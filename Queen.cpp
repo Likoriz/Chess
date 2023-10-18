@@ -183,7 +183,7 @@ void Queen::checkMove(Board* board, Figure* figure)
 	}
 }
 
-bool Bishop::makeMove(Board* board, int MouseX, int MouseY)
+bool Queen::makeMove(Board* board, int MouseX, int MouseY)
 {
 	if (board->getMarkers()[MouseY / 128][MouseX / 128])
 	{
