@@ -198,7 +198,7 @@ Figure* Board::getFigure(float _x, float _y)
 			if((int)(figuresOnBoard[i][j]->getPositionX()/128)==tmpx && (int)(figuresOnBoard[i][j]->getPositionY()/128)==tmpy)
 				return figuresOnBoard[i][j];
 		}
-	
+	return nullptr;
 }
 
 void Board::resetChoice()
@@ -229,7 +229,7 @@ void Board::chooseFigure(int MouseX, int MouseY, Board* board)
 		if(this->GetChosenFigure()->getColor()==turn)
 		{
 			this->GetChosenFigure()->checkMove(figuresOnBoard, board);
-			cout<<"\n"<<this->GetChosenFigure()->getPositionX()<<" "<<this->GetChosenFigure()->getPositionY()<<" "<<this->GetChosenFigure()->getPresence()<<"\n";
+			//cout<<"\n"<<this->GetChosenFigure()->getPositionX()<<" "<<this->GetChosenFigure()->getPositionY()<<" "<<this->GetChosenFigure()->getPresence()<<"\n";
 		}
 		else
 			this->resetChoice();
