@@ -180,5 +180,3 @@ void Queen::checkMove(Board& board, Figure& figure)
 			}
 		}
 
-	}
-}

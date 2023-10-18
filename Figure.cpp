@@ -1,5 +1,6 @@
 #include "Figure.h"
-
+#include "Pawn.h"
+#include "board.h"
 void Figure::setPresence(bool flag)
 {
 	isOnBoard = flag;
@@ -106,7 +107,27 @@ void Figure::checkMove(Figure***& FiguresOnBoard, Board* board)
 }
 bool Figure::makeMove(Board* board, int MouseX, int MouseY)
 {
-	return 0;
+	int TmpX=MouseX/128;
+	int TmpY=MouseY/128;
+	if(board->getMarkers()[TmpY][TmpX])
+	{
+		if(this->getType()==PAWN)
+		{
+			Pawn* tmp=(Pawn*)this;
+			if(!tmp->hasDidFirstMove())
+				tmp->firstMoveIsDone();
+		}
+		Figure* target_fig=board->getFigure(MouseX, MouseY);
+		int tx=this->getPositionX();
+		int ty=this->getPositionY();
+		this->setPosition(target_fig->getPositionX(), target_fig->getPositionY());
+		target_fig->setPosition(tx, ty);
+		target_fig->setPresence(false);
+		cout<<this->getPresence();
+		return true;
+	}
+	else
+		return false;
 }
 
 int Figure::getType()

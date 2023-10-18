@@ -48,7 +48,7 @@ public:
 	int getColor();
 	//Проверка возможных ходов для выбранной фигуры (подсветка свободных клеток)
 	virtual void checkMove(Figure***& FiguresOnBoard, Board* board);
-	virtual bool makeMove(Board* board, int MouseX, int MouseY);
+	bool makeMove(Board* board, int MouseX, int MouseY);
 };
 
 
