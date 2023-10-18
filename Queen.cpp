@@ -179,4 +179,5 @@ void Queen::checkMove(Board& board, Figure& figure)
 					else flag=false;
 			}
 		}
-
+	}
+}

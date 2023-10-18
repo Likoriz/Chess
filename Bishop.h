@@ -3,6 +3,6 @@
 class Bishop : public Figure
 {
 public:
-	void makeMove();
+	void checkMove(Board* board, Figure* figure);
 };
 

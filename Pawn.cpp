@@ -35,7 +35,7 @@ void Pawn::checkMove(Figure***& FiguresOnBoard, Board* board)
 	}
 	else
 	{
-		if(TmpY+1>8)
+		if(TmpY+1<8)
 		{
 			tmp_p=board->getFigure(TmpX*128, (TmpY+1)*128);
 			if(tmp_p&&!tmp_p->getPresence())
@@ -43,7 +43,7 @@ void Pawn::checkMove(Figure***& FiguresOnBoard, Board* board)
 		}
 		if(!(this->hasDidFirstMove()))
 		{
-			if(TmpY+2>8)
+			if(TmpY+2<8)
 			{
 				tmp_p=board->getFigure(TmpX*128, (TmpY+2)*128);
 				if(tmp_p&&!tmp_p->getPresence())
@@ -70,13 +70,6 @@ void Pawn::firstMoveIsDone()
 	this->didFirstMove=true;
 }
 
-
-
-		return true;
-	}
-	else
-		return false;
-}
 bool Pawn::hasDidFirstMove()
 {
 	return didFirstMove;

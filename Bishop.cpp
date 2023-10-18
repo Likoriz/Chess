@@ -109,25 +109,4 @@ void Bishop::checkMove(Board* board, Figure* figure)
 }
 
 
-bool Bishop::makeMove(Board* board, int MouseX, int MouseY)
-{
-	if (board->getMarkers()[MouseY / 128][MouseX / 128])
-	{
-		if (board->getFigure(MouseY, MouseX)->getPresence())
-		{
-			if (board->getFigure(MouseY, MouseX)->getColor() != this->getColor())
-			{
-				board->getFigure(MouseY, MouseX)->setPresence(false);
-				this->setPosition(MouseX, MouseY);
-				return true;
-			}
-		}
-		else
-		{
-			this->setPosition(MouseX, MouseY);
-			return true;
-		}
-	}
-	else
-		return false;
-}
+

@@ -1,11 +1,16 @@
 #include "Rook.h"
+#include "Board.h"
 
-void Rook::makeMove()
+void Rook::checkMove(Board* board, Figure* figure)
 {
 
-	flag = true;
-	offset = 1;
-
+	bool flag=false;
+	float size_x=figure->getPositionY();
+	float size_y=figure->getPositionY();
+	float i=size_y/128.f;
+	float j=size_x/128.f;
+	float offset=1.f;
+	int tmp=figure->getColor();
 	while (flag) {
 		if ((i + offset) < 0)
 			flag = false;

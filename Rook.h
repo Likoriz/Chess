@@ -3,6 +3,6 @@
 class Rook : public Figure
 {
 public:
-	void makeMove();
+	void checkMove(Board* board, Figure* figure);
 };
 
