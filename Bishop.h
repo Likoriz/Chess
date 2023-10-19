@@ -1,8 +1,9 @@
 #pragma once
-#include "King.h"
+#include "Figure.h"
 class Bishop : public Figure
 {
 public:
-	void checkMove(Board* board, Figure* figure);
+	void checkMove(Figure***& FiguresOnBoard, Board* board);
+	bool makeMove(Board* board, int MouseX, int MouseY);
 };
 
