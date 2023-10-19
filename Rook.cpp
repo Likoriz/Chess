@@ -1,72 +1,225 @@
 #include "Rook.h"
 #include "Board.h"
 
-void Rook::checkMove(Board* board, Figure* figure)
+void Rook::checkMove(Figure***& FiguresOnBoard, Board* board)
 {
+	int TmpX = getPositionX() / 128;
+	int TmpY = getPositionY() / 128;
+	int cnt = 0;
+	Figure* TmpP;
 
-	bool flag=false;
-	float size_x=figure->getPositionY();
-	float size_y=figure->getPositionY();
-	float i=size_y/128.f;
-	float j=size_x/128.f;
-	float offset=1.f;
-	int tmp=figure->getColor();
-	while (flag) {
-		if ((i + offset) < 0)
-			flag = false;
-		else {
-			if (not board->getFigure(i + offset, j)->getPresence()) {
-				board->setMarker(i + offset, j);
-				offset++;
-			}
-			else
-				if (board->getFigure(i + offset, j)->getColor() != tmp) {
-					board->setMarker(i + offset, j);
-					flag = false;
+	for (int i = 1; i <= 7; i++) {
+		if (TmpX + i < 8)
+		{
+			if (TmpY - i > -1)
+			{
+				TmpP = board->getFigure((TmpX + i) * 128, (TmpY - i) * 128);
+				if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
+				{
+					board->setMarker(TmpY - i, TmpX + i);
+					//cout<<"3";
 				}
-				else flag = false;
+			}
+			if (TmpY + 1 < 8)
+			{
+				TmpP = board->getFigure((TmpX + i) * 128, (TmpY + i) * 128);
+				if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
+				{
+					board->setMarker(TmpY + i, TmpX + i);
+					//cout<<"4";
+				}
+			}
+		}
+	}
+	for (int i = 1; i <= 7; i++) {
+		if (TmpX - i > -1)
+		{
+			if (TmpY - 1 > -1)
+			{
+				TmpP = board->getFigure((TmpX - i) * 128, (TmpY - i) * 128);
+				if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
+				{
+					board->setMarker(TmpY - i, TmpX - i);
+					//cout<<"5";
+				}
+			}
+			if (TmpY + 1 < 8)
+			{
+				TmpP = board->getFigure((TmpX - i) * 128, (TmpY + i) * 128);
+				if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
+				{
+					board->setMarker(TmpY + i, TmpX - i);
+					//cout<<"6";
+				}
+			}
 		}
 	}
 
-	flag = true;
-	offset = 1;
-
-	while (flag) {
-		if ((j + offset) < 0)
-			flag = false;
-		else {
-			if (not board->getFigure(i, j + offset)->getPresence()) {
-				board->setMarker(i, j + offset);
-				offset++;
-			}
-			else
-				if (board->getFigure(i, j + offset)->getColor() != tmp) {
-					board->setMarker(i, j + offset);
-					flag = false;
+	for (int i = 1; i <= 7; i++) {
+		if (TmpX + i < 8)
+		{
+			if (TmpY - 1 > -1)
+			{
+				TmpP = board->getFigure((TmpX + i) * 128, (TmpY - i) * 128);
+				if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
+				{
+					board->setMarker(TmpY - i, TmpX + i);
+					//cout<<"3";
 				}
-				else flag = false;
+			}
+			if (TmpY + 1 < 8)
+			{
+				TmpP = board->getFigure((TmpX + i) * 128, (TmpY + i) * 128);
+				if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
+				{
+					board->setMarker(TmpY + i, TmpX + i);
+					//cout<<"4";
+				}
+			}
 		}
 	}
 
-	flag = true;
-	offset = 1;
+	for (int i = 1; i <= 7; i++) {
+		if (TmpX - i > -1)
+		{
+			if (TmpY - 1 > -1)
+			{
+				TmpP = board->getFigure((TmpX - i) * 128, (TmpY - i) * 128);
+				if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
+				{
+					board->setMarker(TmpY - i, TmpX - i);
+					//cout<<"5";
+				}
+			}
+			if (TmpY + 1 < 8)
+			{
+				TmpP = board->getFigure((TmpX - i) * 128, (TmpY + i) * 128);
+				if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
+				{
+					board->setMarker(TmpY + i, TmpX - i);
+					//cout<<"6";
+				}
+			}
+		}
+	}
+}
 
-	while (flag) {
+
+
+/*int mas[8][8] = { 0 };
+bool flag = false;
+int TmpX = getPositionX() / 128;
+int TmpY = getPositionY() / 128;
+int i = TmpY;
+int j = TmpX;
+int offset = 1;
+Figure* TmpP;
+
+
+while (flag) {
+	if ((i - offset) < 0)
+		flag = false;
+	else {
 		if ((j - offset) < 0)
 			flag = false;
 		else {
-			if (not board->getFigure(i, j - offset)->getPresence()) {
-				board->setMarker(i, j - offset);
+			TmpP = board->getFigure((TmpX - offset) * 128, (TmpY - offset) * 128);
+			if (TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor())) {
+				board->setMarker(i - offset, j - offset);
 				offset++;
 			}
 			else
-				if (board->getFigure(i, j - offset)->getColor() != tmp) {
-					board->setMarker(i, j - offset);
-					flag = false;
-				}
-				else flag = false;
+				TmpP = board->getFigure((TmpX - offset) * 128, (TmpY - offset) * 128);
+			if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor())) {
+				board->setMarker(i - offset, j - offset);
+				flag = false;
+			}
+			else flag = false;
 		}
 	}
 
 }
+flag = true;
+offset = 1;
+
+
+while (flag) {
+	if ((i - offset) < 0)
+		flag = false;
+	else {
+		if ((j + offset) < 0)
+			flag = false;
+		else {
+			TmpP = board->getFigure((TmpX + offset) * 128, (TmpY - offset) * 128);
+			if (TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor())) {
+				board->setMarker(i - offset, j + offset);
+				offset++;
+			}
+			else
+				TmpP = board->getFigure((TmpX + offset) * 128, (TmpY - offset) * 128);
+			if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor())) {
+				board->setMarker(i - offset, j + offset);
+				flag = false;
+			}
+			else flag = false;
+		}
+	}
+
+}
+flag = true;
+offset = 1;
+
+while (flag) {
+	if ((i + offset) < 0)
+		flag = false;
+	else {
+		if ((j - offset) < 0)
+			flag = false;
+		else {
+			TmpP = board->getFigure((TmpX - offset) * 128, (TmpY + offset) * 128);
+			if (TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor())) {
+				board->setMarker(i + offset, j + offset);
+				offset++;
+			}
+			else
+				TmpP = board->getFigure((TmpX - offset) * 128, (TmpY + offset) * 128);
+			if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor())) {
+				board->setMarker(i + offset, j + offset);
+				flag = false;
+			}
+			else flag = false;
+		}
+	}
+
+}
+flag = true;
+offset = 1;
+
+while (flag) {
+	if ((i + offset) < 0)
+		flag = false;
+	else {
+		if ((j + offset) < 0)
+			flag = false;
+		else {
+			TmpP = board->getFigure((TmpX + offset) * 128, (TmpY + offset) * 128);
+			if (TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor())) {
+				board->setMarker(i + offset, j + offset);
+				offset++;
+			}
+			else
+				TmpP = board->getFigure((TmpX + offset) * 128, (TmpY + offset) * 128);
+			if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor())) {
+				board->setMarker(i + offset, j + offset);
+				flag = false;
+			}
+			else flag = false;
+		}
+	}
+
+}
+flag = true;
+offset = 1;
+
+}*/
 
