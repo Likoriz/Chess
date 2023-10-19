@@ -11,7 +11,16 @@ void Rook::checkMove(Figure***& FiguresOnBoard, Board* board)
 	for (int i = 1; i <= 7; i++) {
 		if (TmpX + i < 8)
 		{
-			if (TmpY - i > -1)
+			TmpP = board->getFigure((TmpX + i) * 128, (TmpY - i) * 128);
+			if (TmpP->getPresence())
+			{
+				if (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor())
+				{
+					board->setMarker(TmpY - i, TmpX + i);
+				}
+				break;
+			}
+			if (TmpY - 1 > -1)
 			{
 				TmpP = board->getFigure((TmpX + i) * 128, (TmpY - i) * 128);
 				if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
@@ -34,6 +43,17 @@ void Rook::checkMove(Figure***& FiguresOnBoard, Board* board)
 	for (int i = 1; i <= 7; i++) {
 		if (TmpX - i > -1)
 		{
+
+			TmpP = board->getFigure((TmpX - i) * 128, (TmpY - i) * 128);
+			if (TmpP->getPresence())
+			{
+				if (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor())
+				{
+					board->setMarker(TmpY - i, TmpX - i);
+				}
+				break;
+			}
+
 			if (TmpY - 1 > -1)
 			{
 				TmpP = board->getFigure((TmpX - i) * 128, (TmpY - i) * 128);
@@ -58,6 +78,17 @@ void Rook::checkMove(Figure***& FiguresOnBoard, Board* board)
 	for (int i = 1; i <= 7; i++) {
 		if (TmpX + i < 8)
 		{
+
+			TmpP = board->getFigure((TmpX + i) * 128, (TmpY - i) * 128);
+			if (TmpP->getPresence())
+			{
+				if (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor())
+				{
+					board->setMarker(TmpY - i, TmpX + i);
+				}
+				break;
+			}
+
 			if (TmpY - 1 > -1)
 			{
 				TmpP = board->getFigure((TmpX + i) * 128, (TmpY - i) * 128);
@@ -82,6 +113,17 @@ void Rook::checkMove(Figure***& FiguresOnBoard, Board* board)
 	for (int i = 1; i <= 7; i++) {
 		if (TmpX - i > -1)
 		{
+
+			TmpP = board->getFigure((TmpX - i) * 128, (TmpY - i) * 128);
+			if (TmpP->getPresence())
+			{
+				if (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor())
+				{
+					board->setMarker(TmpY - i, TmpX - i);
+				}
+				break;
+			}
+
 			if (TmpY - 1 > -1)
 			{
 				TmpP = board->getFigure((TmpX - i) * 128, (TmpY - i) * 128);
