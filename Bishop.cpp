@@ -16,36 +16,37 @@ void Bishop::checkMove(Figure***& FiguresOnBoard, Board* board)
 	int TmpX = getPositionX() / 128;
 	int TmpY = getPositionY() / 128;
 	Figure* TmpP;
-	//for (int i = 1; i <= 7; i++) {
-	if (TmpX + 1 < 8)
-	{
-		TmpP = board->getFigure((TmpX + 1) * 128, (TmpY) * 128);
-		if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
-			board->setMarker(TmpY, TmpX + 1);
+	for (int i = 1; i <= 7; i++) {
+		if (TmpX + 1 < 8)
+		{
+			TmpP = board->getFigure((TmpX + i) * 128, (TmpY) * 128);
+			if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
+				board->setMarker(TmpY, TmpX + i);
+		}
 	}
-	//}
-	//for (int i = 1; i <= 7; i++) {
-	if (TmpX - 1 > -1)
-	{
-		TmpP = board->getFigure((TmpX - 1) * 128, (TmpY) * 128);
-		if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
-			board->setMarker(TmpY, TmpX - 1);
+	for (int i = 1; i <= 7; i++) {
+		if (TmpX - 1 > -1)
+		{
+			TmpP = board->getFigure((TmpX - i) * 128, (TmpY) * 128);
+			if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
+				board->setMarker(TmpY, TmpX - i);
+		}
 	}
-	//}
-	//for (int i = 1; i <= 7; i++) {
-	if (TmpY - 1 > -1)
-	{
-		TmpP = board->getFigure((TmpX) * 128, (TmpY - 1) * 128);
-		if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
-			board->setMarker(TmpY - 1, TmpX);
+	for (int i = 1; i <= 7; i++) {
+		if (TmpY - 1 > -1)
+		{
+			TmpP = board->getFigure((TmpX) * 128, (TmpY - i) * 128);
+			if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
+				board->setMarker(TmpY - i, TmpX);
+		}
 	}
-	//}
-	//for (int i = 1; i <= 7; i++) {
-	if (TmpY + 1 < 8)
-	{
-		TmpP = board->getFigure((TmpX) * 128, (TmpY + 1) * 128);
-		if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
-			board->setMarker(TmpY + 1, TmpX);
+	for (int i = 1; i <= 7; i++) {
+		if (TmpY + 1 < 8)
+		{
+			TmpP = board->getFigure((TmpX) * 128, (TmpY + i) * 128);
+			if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
+				board->setMarker(TmpY + i, TmpX);
+		}
 	}
 }
 //}
