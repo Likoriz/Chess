@@ -12,15 +12,15 @@ void Rook::checkMove(Figure***& FiguresOnBoard, Board* board)
 		if (TmpX + i < 8)
 		{
 			TmpP = board->getFigure((TmpX + i) * 128, (TmpY - i) * 128);
-			if (TmpP->getPresence())
+			if (TmpP && TmpP->getPresence())
 			{
-				if (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor())
+				if (!TmpP->getPresence() || board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor())
 				{
 					board->setMarker(TmpY - i, TmpX + i);
 				}
 				break;
 			}
-			if (TmpY - 1 > -1)
+			if (TmpY - i > -1)
 			{
 				TmpP = board->getFigure((TmpX + i) * 128, (TmpY - i) * 128);
 				if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
@@ -29,7 +29,7 @@ void Rook::checkMove(Figure***& FiguresOnBoard, Board* board)
 					//cout<<"3";
 				}
 			}
-			if (TmpY + 1 < 8)
+			if (TmpY + i < 8)
 			{
 				TmpP = board->getFigure((TmpX + i) * 128, (TmpY + i) * 128);
 				if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
@@ -45,7 +45,7 @@ void Rook::checkMove(Figure***& FiguresOnBoard, Board* board)
 		{
 
 			TmpP = board->getFigure((TmpX - i) * 128, (TmpY - i) * 128);
-			if (TmpP->getPresence())
+			if (TmpP && TmpP->getPresence())
 			{
 				if (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor())
 				{
@@ -54,7 +54,7 @@ void Rook::checkMove(Figure***& FiguresOnBoard, Board* board)
 				break;
 			}
 
-			if (TmpY - 1 > -1)
+			if (TmpY - i > -1)
 			{
 				TmpP = board->getFigure((TmpX - i) * 128, (TmpY - i) * 128);
 				if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
@@ -63,7 +63,7 @@ void Rook::checkMove(Figure***& FiguresOnBoard, Board* board)
 					//cout<<"5";
 				}
 			}
-			if (TmpY + 1 < 8)
+			if (TmpY + i < 8)
 			{
 				TmpP = board->getFigure((TmpX - i) * 128, (TmpY + i) * 128);
 				if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
@@ -80,7 +80,7 @@ void Rook::checkMove(Figure***& FiguresOnBoard, Board* board)
 		{
 
 			TmpP = board->getFigure((TmpX + i) * 128, (TmpY - i) * 128);
-			if (TmpP->getPresence())
+			if (TmpP && TmpP->getPresence())
 			{
 				if (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor())
 				{
@@ -89,7 +89,7 @@ void Rook::checkMove(Figure***& FiguresOnBoard, Board* board)
 				break;
 			}
 
-			if (TmpY - 1 > -1)
+			if (TmpY - i > -1)
 			{
 				TmpP = board->getFigure((TmpX + i) * 128, (TmpY - i) * 128);
 				if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
@@ -98,7 +98,7 @@ void Rook::checkMove(Figure***& FiguresOnBoard, Board* board)
 					//cout<<"3";
 				}
 			}
-			if (TmpY + 1 < 8)
+			if (TmpY + i < 8)
 			{
 				TmpP = board->getFigure((TmpX + i) * 128, (TmpY + i) * 128);
 				if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
@@ -115,7 +115,7 @@ void Rook::checkMove(Figure***& FiguresOnBoard, Board* board)
 		{
 
 			TmpP = board->getFigure((TmpX - i) * 128, (TmpY - i) * 128);
-			if (TmpP->getPresence())
+			if (TmpP && TmpP->getPresence())
 			{
 				if (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor())
 				{
@@ -124,7 +124,7 @@ void Rook::checkMove(Figure***& FiguresOnBoard, Board* board)
 				break;
 			}
 
-			if (TmpY - 1 > -1)
+			if (TmpY - i > -1)
 			{
 				TmpP = board->getFigure((TmpX - i) * 128, (TmpY - i) * 128);
 				if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
@@ -133,7 +133,7 @@ void Rook::checkMove(Figure***& FiguresOnBoard, Board* board)
 					//cout<<"5";
 				}
 			}
-			if (TmpY + 1 < 8)
+			if (TmpY + i < 8)
 			{
 				TmpP = board->getFigure((TmpX - i) * 128, (TmpY + i) * 128);
 				if (!TmpP->getPresence() || (board->getFigure(TmpX * 128, TmpY * 128)->getColor() != TmpP->getColor()))
